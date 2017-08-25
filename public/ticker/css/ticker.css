@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #003366;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+.container {
+  margin-left: 15px;
+  margin-right: 15px;
+  width: auto;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: orange;
+}
+
+.stock {
+  background-color: rgba(0,0,0,0.5);
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2px solid rgba(0,0,0,0.5);
+  width: 25%;
+  height: 25vh;
+}
+
+
+@-webkit-keyframes NAME-YOUR-ANIMATION {
+  0%   { background-color: red; }
+  100% { background-color: rgba(0,0,0,0.5); }
+}
+@-moz-keyframes NAME-YOUR-ANIMATION {
+  0%   { background-color: red; }
+  100% { background-color: rgba(0,0,0,0.5); }
+}
+@-o-keyframes NAME-YOUR-ANIMATION {
+  0%   { background-color: red; }
+  100% { background-color: rgba(0,0,0,0.5); }
+}
+@keyframes NAME-YOUR-ANIMATION {
+  0%   { background-color: red; }
+  100% { background-color: rgba(0,0,0,0.5); }
+}
+
+@-webkit-keyframes GREEN-FADE {
+  0%   { background-color: green; }
+  100% { background-color: rgba(0,0,0,0.5); }
+}
+@-moz-keyframes GREEN-FADE {
+  0%   { background-color: green; }
+  100% { background-color: rgba(0,0,0,0.5); }
+}
+@-o-keyframes GREEN-FADE {
+  0%   { background-color: green; }
+  100% { background-color: rgba(0,0,0,0.5); }
+}
+@keyframes GREEN-FADE {
+  0%   { background-color: green; }
+  100% { background-color: rgba(0,0,0,0.5); }
+}
+
+.tickGreen {
+  -webkit-animation: GREEN-FADE 1s ;
+  -moz-animation:    GREEN-FADE 1s ;
+  -o-animation:      GREEN-FADE 1s ;
+  animation:         GREEN-FADE 1s ;
+}
+
+.tickRed {
+  -webkit-animation: NAME-YOUR-ANIMATION 1s ;
+  -moz-animation:    NAME-YOUR-ANIMATION 1s ;
+  -o-animation:      NAME-YOUR-ANIMATION 1s ;
+  animation:         NAME-YOUR-ANIMATION 1s ;
+}
+

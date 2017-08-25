@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TICKER</title>
+  <link rel="stylesheet" type="text/css" href="/ticker/css/ticker.css">
+</head>
+<body>
+
+
+<nav class="navbar">
+  <div class="container">
+    <div class="row">
+      <a href="/" class="nav-link">TICKER</a>
+    </div>
+  </div>
+</nav>
+
+
+<div id="vueStocks" style="margin-top: 50px;">
+  <div v-for="stock in stocks">
+    <div class="stock" v-bind:class="{ tickGreen: stock['isUp'], tickRed: stock['isDown'] }">
+      <div>{{ stock["symbol"] }}</div>
+      <div>{{ stock["closed"] }}</div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/ticker/js/ticker.js"></script>
+</body>
+</html>
