@@ -4,15 +4,27 @@
 }
 
 body {
-  background-color: #003366;
+  background-color: #03a9f4;
   font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
   color: #fff;
 }
 
-.container {
-  margin-left: 15px;
-  margin-right: 15px;
-  width: auto;
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
+}
+
+.icon-github-white {
+  background-image: url('../img/icons/github_white_120.png');
 }
 
 .navbar {
@@ -44,42 +56,84 @@ body {
   justify-content: center;
   box-sizing: border-box;
   border: 2px solid rgba(0,0,0,0.5);
-  width: 25%;
-  height: 25vh;
+  width: 100%;
+  height: 12.5vh;
 }
 
+@media (min-width: 640px) {
+  .stock {
+    height: 25vh;
+  }
+}
 
-@-webkit-keyframes NAME-YOUR-ANIMATION {
-  0%   { background-color: red; }
+.container {
+  margin-left: 15px;
+  margin-right: 15px;
+  width: auto;
+}
+
+.row {
+  width: 100%;
+}
+
+.row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.row:before, 
+.row:after {
+  content:"";
+  display: table ;
+  clear:both;
+}
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px; 
+}
+
+.col-xs-3 {width: 25%;}
+.col-xs-4 {width: 33.33%;}
+.col-xs-6 {width: 50%;}
+
+@media (min-width: 640px) {
+  .col-sm-3 {
+    width: 25%;
+  }
+}
+
+@-webkit-keyframes RED-FADE {
+  0%   { background-color: #f44336; }
   100% { background-color: rgba(0,0,0,0.5); }
 }
-@-moz-keyframes NAME-YOUR-ANIMATION {
-  0%   { background-color: red; }
+@-moz-keyframes RED-FADE {
+  0%   { background-color: #f44336; }
   100% { background-color: rgba(0,0,0,0.5); }
 }
-@-o-keyframes NAME-YOUR-ANIMATION {
-  0%   { background-color: red; }
+@-o-keyframes RED-FADE {
+  0%   { background-color: #f44336; }
   100% { background-color: rgba(0,0,0,0.5); }
 }
-@keyframes NAME-YOUR-ANIMATION {
-  0%   { background-color: red; }
+@keyframes RED-FADE {
+  0%   { background-color: #f44336; }
   100% { background-color: rgba(0,0,0,0.5); }
 }
 
 @-webkit-keyframes GREEN-FADE {
-  0%   { background-color: green; }
+  0%   { background-color: #8bc34a; }
   100% { background-color: rgba(0,0,0,0.5); }
 }
 @-moz-keyframes GREEN-FADE {
-  0%   { background-color: green; }
+  0%   { background-color: #8bc34a; }
   100% { background-color: rgba(0,0,0,0.5); }
 }
 @-o-keyframes GREEN-FADE {
-  0%   { background-color: green; }
+  0%   { background-color: #8bc34a; }
   100% { background-color: rgba(0,0,0,0.5); }
 }
 @keyframes GREEN-FADE {
-  0%   { background-color: green; }
+  0%   { background-color: #8bc34a; }
   100% { background-color: rgba(0,0,0,0.5); }
 }
 
@@ -91,9 +145,8 @@ body {
 }
 
 .tickRed {
-  -webkit-animation: NAME-YOUR-ANIMATION 1s ;
-  -moz-animation:    NAME-YOUR-ANIMATION 1s ;
-  -o-animation:      NAME-YOUR-ANIMATION 1s ;
-  animation:         NAME-YOUR-ANIMATION 1s ;
+  -webkit-animation: RED-FADE 1s ;
+  -moz-animation:    RED-FADE 1s ;
+  -o-animation:      RED-FADE 1s ;
+  animation:         RED-FADE 1s ;
 }
-

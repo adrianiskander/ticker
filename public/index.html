@@ -2,7 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>TICKER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>TICKER - Real-time coin transactions ticker</title>
   <link rel="stylesheet" type="text/css" href="/ticker/css/ticker.css">
 </head>
 <body>
@@ -11,17 +12,29 @@
 <nav class="navbar">
   <div class="container">
     <div class="row">
-      <a href="/" class="nav-link">TICKER</a>
+      <div class="col-xs-4">
+        <div class="flex-row">
+          <a href="/" class="nav-link">TICKER</a>  
+        </div>
+      </div>
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4 row-reverse">
+        <a href="https://github.com/adrianiskander/ticker" class="nav-link"><img class="icon icon-github-white"></a>
+      </div>
     </div>
   </div>
 </nav>
 
 
 <div id="vueStocks">
-  <div v-for="stock in stocks">
-    <div class="stock" v-bind:class="{ tickGreen: stock['isUp'], tickRed: stock['isDown'] }">
-      <div>{{ stock["symbol"] }}</div>
-      <div>{{ stock["closed"] }}</div>
+  <div class="row">
+    <div v-for="stock in stocks">
+      <div class="col-xs-6 col-sm-3">
+        <div class="stock" v-bind:class="{ tickGreen: stock['isUp'], tickRed: stock['isDown'] }">
+          <div>{{ stock["symbol"] }}</div>
+          <div>{{ stock["closed"] }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
