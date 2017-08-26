@@ -23,6 +23,12 @@ vueStocks = new Vue({
   methods: {
     updateStock: function(stock) {
       this.stocks[stock["symbol"]] = stock;
+      setTimeout(() => {
+        // Reset stock's isUp and isDown params to reset binded classes.
+        // This will replay tick animation if price changes in the same direction.
+        this.stocks[stock["symbol"]]["isUp"] = false;
+        this.stocks[stock["symbol"]]["isDown"] = false;
+        }, 1000);
       return null;
     },
   }
@@ -86,10 +92,8 @@ coinIO.on("m", function(message){
             "closed": message[5]
         }
         if (message[4] === "1") {
-            stock["isUp"] = true,
-            stock["isDown"] = false
+            stock["isUp"] = true
         } else if (message[4] === "2") {
-            stock["isUp"] = false,
             stock["isDown"] = true
         }
         vueStocks.updateStock(stock);

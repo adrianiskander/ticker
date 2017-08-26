@@ -17,7 +17,7 @@
 </nav>
 
 
-<div id="vueStocks" style="margin-top: 50px;">
+<div id="vueStocks">
   <div v-for="stock in stocks">
     <div class="stock" v-bind:class="{ tickGreen: stock['isUp'], tickRed: stock['isDown'] }">
       <div>{{ stock["symbol"] }}</div>
