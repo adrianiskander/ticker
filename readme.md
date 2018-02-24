@@ -6,8 +6,7 @@
 
 <h3>Requirements:</h3>
 <ul>
-  <li><a href="https://git-scm.com">Git</a></li>
-  <li><a href="https://nodejs.org">Node</a></li>
+  <li><a href="https://git-scm.com">Git</a> and <a href="https://nodejs.org">Node</a> installed</li>
   <li>No API keys required</li>
 </ul>
 
@@ -15,7 +14,7 @@
 <ol>
   <li>Enter console</li>
   <li>Clone repository: <code>git clone https://github.com/adrianiskander/ticker.git</code></li>
-  <li>Enter reposotory: <code>cd ticker</code></li>
+  <li>Enter repository: <code>cd ticker</code></li>
   <li>Install packages: <code>npm install</code></li>
   <li>Run with: <code>npm start</code></li>
   <li>Optionally run Vue version with: <code>node index runserver</code> (This will be dropped)</li>
