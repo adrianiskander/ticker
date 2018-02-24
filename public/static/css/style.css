@@ -22,6 +22,15 @@ body {
   height: 100vh;
 }
 
+.icon-sm {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-position: center;
+}
+
+.icon-github { background-image: url('../icons/github.png');}
+
 .nav-link {
   padding: 0px;
 }
