@@ -1,25 +1,35 @@
-<h1>TICKER - Real-time coin transactions ticker</h1>
+<h1>TICKER - Real time coins transactions ticker</h1>
 
-<img src="http://ticker.unicogent.com/ticker/img/ticker.gif" alt="TICKER - Real-time coin transactions ticker">
+<h3>Live demo: <a href="https://adrianiskander.github.io/ticker">adrianiskander.github.io/ticker</a></h3>
 
-<h3>Stack:</h3>
+<img src="docs/img/ticker_web_v0_2_00.png">
+
+<h3>Requirements:</h3>
 <ul>
-  <li>Javascript</li>
-  <li>Node</li>
-  <li>Express</li>
-  <li>Socket.IO</li>
-  <li>Vue</li>
-  <li>CryptoCompare API</li>
+  <li><a href="https://git-scm.com">Git</a> and <a href="https://nodejs.org">Node</a> installed</li>
+  <li>No API keys required</li>
 </ul>
 
-<h3>Dependencies:</h3>
-<p>See package.json for dependencies. No API keys required.</p>
-
-<h3>Deployment:</h3>
+<h3>Local deployment:</h3>
 <ol>
-  <li>Clone repository and install dependencies</li>
-  <li>Run locally with: <code>node index.js runserver</code></li>
+  <li>Enter console</li>
+  <li>Clone repository: <code>git clone https://github.com/adrianiskander/ticker.git</code></li>
+  <li>Enter repository: <code>cd ticker</code></li>
+  <li>Install packages: <code>npm install</code></li>
+  <li>Run with: <code>npm start</code></li>
+  <li>Optionally run Vue version with: <code>node index runserver</code> (This will be dropped)</li>
+  <li>Browse: <code>http://127.0.0.1:3000</code></li>
+  <li>Stop with: <code>CTRL+C</code></li>
 </ol>
+
+<h3>Version history</h3>
+<ul>
+  <li>v0.2 (current): Rewritten with React and restyled.</li>
+  <li>v0.1: Initial setup with Vue and Express.</li>
+</ul>
+
+<h3>Credits:</h3>
+<p>This application uses <a href="https://coinmarketcap.com/api/">CoinMarketCap API</a> and <a href="https://www.cryptocompare.com/api">CryptoCompare WebSocket API</a>. Thanks!</p>
 
 <h3>Licence:</h3>
 <p>MIT Licence</p>

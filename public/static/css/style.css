@@ -1,0 +1,105 @@
+body {
+  padding-top: 40px;
+  height: 100vh;
+  background-color: #036;
+  background: linear-gradient(#004e92, #000428);
+  background-attachment: fixed;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.bg-black { background-color: black !important;}
+.bg-black-alpha { background-color: rgba(0,0,0,0.75) !important; }
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.icon-sm {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-position: center;
+}
+
+.icon-github { background-image: url('../icons/github.png');}
+
+.nav-link {
+  padding: 0px;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+  color: #FFC107 !important;
+}
+
+.stock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  height: 100px;
+}
+
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+@-webkit-keyframes RED-FADE {
+  0%   { background-color: #f44336; }
+  100% { background-color: transparent; }
+}
+@-moz-keyframes RED-FADE {
+  0%   { background-color: #f44336; }
+  100% { background-color: transparent; }
+}
+@-o-keyframes RED-FADE {
+  0%   { background-color: #f44336; }
+  100% { background-color: transparent; }
+}
+@keyframes RED-FADE {
+  0%   { background-color: #f44336; }
+  100% { background-color: transparent; }
+}
+
+@-webkit-keyframes GREEN-FADE {
+  0%   { background-color: #8bc34a; }
+  100% { background-color: transparent; }
+}
+@-moz-keyframes GREEN-FADE {
+  0%   { background-color: #8bc34a; }
+  100% { background-color: transparent; }
+}
+@-o-keyframes GREEN-FADE {
+  0%   { background-color: #8bc34a; }
+  100% { background-color: transparent; }
+}
+@keyframes GREEN-FADE {
+  0%   { background-color: #8bc34a; }
+  100% { background-color: transparent; }
+}
+
+.tickGreen {
+  -webkit-animation: GREEN-FADE 1s ;
+  -moz-animation:    GREEN-FADE 1s ;
+  -o-animation:      GREEN-FADE 1s ;
+  animation:         GREEN-FADE 1s ;
+}
+
+.tickRed {
+  -webkit-animation: RED-FADE 1s ;
+  -moz-animation:    RED-FADE 1s ;
+  -o-animation:      RED-FADE 1s ;
+  animation:         RED-FADE 1s ;
+}

@@ -2,7 +2,7 @@ const path = require("path");
 
 
 const BASE_DIR = path.join(__dirname);
-const STATIC_DIR = path.resolve(BASE_DIR + path.sep + ".." + path.sep + "public");
+const STATIC_DIR = path.resolve(BASE_DIR + path.sep + ".." + path.sep + "public_vue");
 
 
 module.exports = {
