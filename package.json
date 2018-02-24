@@ -1,6 +1,6 @@
 {
   "name": "ticker",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "main": "index.js",
   "author": "Adrian Iskander",
@@ -12,7 +12,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "express": "^4.16.2",
+    "axios": "^0.18.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "^1.1.1",
