@@ -18,6 +18,7 @@
   <li>Enter reposotory: <code>cd ticker</code></li>
   <li>Install packages: <code>npm install</code></li>
   <li>Run with: <code>npm start</code></li>
+  <li>Optionally run Vue version with: <code>node index runserver</code> (This will be dropped)</li>
   <li>Browse: <code>http://127.0.0.1:3000</code></li>
   <li>Stop with: <code>CTRL+C</code></li>
 </ol>
