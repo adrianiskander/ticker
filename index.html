@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>ticker / realtime cryptocurrency transactions / ticker</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.min.css" />
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.4/vue.min.js"></script>
+</head>
+<body>
+
+
+<nav class="Navbar">
+  <a class="Navbar__item ml-3" href="#"><em><b>ticker</b></em></a>
+  <a class="github-logo mr-3" href="https://github.com/adrianiskander/ticker"></a>
+</nav>
+
+
+<div id="VueTicker">
+  <div class="container-fluid pl-0 pr-0">
+    <div class="row no-gutters">
+      <div class="col-4 col-md-3 col-lg-2" v-for="coin in coins">
+        <section class="Coin" v-bind:class="{ tickGreen: coin.isUp, tickRed: coin.isDown }">
+          <span><b>{{ coin.name }}</b></span>
+          <span>&dollar;{{ coin.price }}</span>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="./VueTicker.js"></script>
+</body>
+</html>

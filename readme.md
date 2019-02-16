@@ -1,27 +1,17 @@
-<h1>TICKER - Real time cryptotransactions ticker</h1>
+<h1>ticker / realtime cryptocurrency transactions / ticker</h1>
 
-<h3>Live demo: <a href="https://adrianiskander.github.io/ticker">adrianiskander.github.io/ticker</a></h3>
+<h3>Check live demo: <a href="https://adrianiskander.github.io/ticker">adrianiskander.github.io/ticker</a></h3>
 
-<img src="docs/img/ticker_web_v0_2_00.png">
+<img src="./ticker.png" alt="ticker / realtime cryptopcurrency transactions / ticker" />
 
-<h3>Requirements:</h3>
+<br />
+<h3>UPDATE: No deployment needed anymore, app is pure client-side now. Either git clone or download zip on any device with browser & internet and open index.html. Or just use live demo. Obsolete code will be removed on next iteration.</h3>
+
+<h3>Made with</h3>
 <ul>
-  <li><a href="https://git-scm.com">Git</a> and <a href="https://nodejs.org">Node</a> installed</li>
-  <li>No API keys required</li>
+  <li><a href="https://min-api.cryptocompare.com">CryptoCompare API</a></li>
+  <li><a href="https://socket.io/">SocketIO</a></li>
+  <li><a href="https://vuejs.org/">VueJS</a></li>
 </ul>
-
-<h3>Local deployment:</h3>
-<ol>
-  <li>Enter command line</li>
-  <li>Clone repository: <code>git clone https://github.com/adrianiskander/ticker.git</code></li>
-  <li>Enter repository: <code>cd ticker</code></li>
-  <li>Install packages: <code>npm install</code></li>
-  <li>Run with: <code>npm start</code></li>
-  <li>Browse: <code>http://127.0.0.1:3000</code></li>
-  <li>Stop with: <code>CTRL+C</code></li>
-</ol>
-
-<h3>Credits:</h3>
-<p>This application uses <a href="https://coinmarketcap.com/api/">CoinMarketCap API</a> and <a href="https://www.cryptocompare.com/api">CryptoCompare WebSocket API</a>. Thanks!</p>
 
 <h3>Licence: MIT</h3>
