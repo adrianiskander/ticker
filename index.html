@@ -17,22 +17,22 @@
 
   <nav id="navbar">
     <div class="flex-center">
-      <a class="ml-3" href="https://github.com/adrianiskander/ticker"><strong>TICKER</strong></a>
+      <a class="ml-3" href="https://adrianiskander.github.io/ticker"><strong>TICKER</strong></a>
       <section class="flex-center ml-3">
         <header>sort by:</header>
         <select class="ml-1" v-on:change="sort">
-          <option value="volume">vol24h</option>
-          <option value="name">a-Z</option>
+          <option value="volume">VOL24H</option>
+          <option value="name">A-Z</option>
         </select>
       </section>
     </div>
     <a class="github-logo mr-3" href="https://github.com/adrianiskander/ticker"></a>
   </nav>
 
-  <div class="container-fluid pl-0 pr-0">
+  <div class="container-fluid p-0">
     <div class="row no-gutters">
       <div class="col-4 col-md-3 col-lg-2" v-for="coin in coins">
-        <section class="Coin" v-bind:class="{ tickGreen: coin.isUp, tickRed: coin.isDown }">
+        <section class="coin" v-bind:class="{ tickGreen: coin.isUp, tickRed: coin.isDown }">
           <span><b>{{ coin.name }}</b></span>
           <span>&dollar;{{ coin.price }}</span>
         </section>

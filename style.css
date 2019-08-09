@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700&display=swap&subset=latin-ext');
+
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -6,17 +8,18 @@
 body {
   background: linear-gradient(#004e92, #000428);
   background-attachment: fixed;
+  background-repeat: no-repeat;
   color: white;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.025rem;
+  font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
   margin: 0px;
   padding-top: 50px;
 }
 
 @media (min-width: 768px) {
   body {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -29,6 +32,16 @@ a:hover { color: orange; }
 
 select { cursor: pointer; }
 
+.coin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black; 
+  text-align: center;
+  height: 70px;
+}
+
 .Coin {
   display: flex;
   flex-direction: column;
@@ -40,7 +53,7 @@ select { cursor: pointer; }
 }
 
 @media (min-width: 768px) {
-  .Coin {
+  .coin {
     height: 100px;
   }
 }
