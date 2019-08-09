@@ -20,8 +20,14 @@ body {
   }
 }
 
-a {text-decoration: none;}
-a:hover {color: orange;}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover { color: orange; }
+
+select { cursor: pointer; }
 
 .Coin {
   display: flex;
