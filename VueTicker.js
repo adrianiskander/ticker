@@ -50,13 +50,13 @@ let VueTicker = new Vue({
       // sort by name ascending
       if (option === 'name') {
         coins.sort((a, b) => {
-          return a.name > b.name
+          return (a.name < b.name) ? -1 : 1
         })
       }
       // sort by volume descending
       else if (option === 'volume') {
         coins.sort((a, b) => {
-          return a.volume < b.volume
+          return (a.volume > b.volume) ? -1 : 1
         })
       }
       else {
@@ -66,9 +66,13 @@ let VueTicker = new Vue({
       for (let i=0; i < coins.length; i++) {
         let coin = coins[i]
         coinsDict[coin.name] = coin
+        console.log(coinsDict)
       }
 
       this.coins = coinsDict
+
+      // // this.$set(this.data, 'coins', coinsDict)
+      // this.$set(this.someObject, 'b', 2)
     },
 
 
