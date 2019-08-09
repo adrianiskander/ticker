@@ -40,6 +40,7 @@ a:hover {color: orange;}
 }
 
 [class*='flex-'] { display: flex; }
+.flex-center { align-items: center; justify-content: center; }
 .flex-col { flex-direction: column; }
 .flex-row { flex-direction: row; }
 
@@ -53,24 +54,26 @@ a:hover {color: orange;}
   height: 25px;
 }
 
-.Navbar {
+#navbar {
   position: fixed;
   top: 0px;
   left: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(0,0,0,0.9);
-  height: 50px;
+  background-color: rgba(0,0,0,0.95);
+  color: white;
   width: 100%;
-  z-index: 1;
+  height: 50px;
+  z-index: 10;
 }
 
-.Navbar__item {color: white;}
+#navbar a {
+  color: white;
+}
 
-.Navbar__item:hover {
+#navbar a:hover {
   color: orange;
-  text-decoration: none;
 }
 
 @-webkit-keyframes RED-FADE {
