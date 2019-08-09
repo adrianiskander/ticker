@@ -27,9 +27,11 @@ let VueTicker = new Vue({
       let coinsParsed = {}
 
       coins.forEach(coin => {
+
         coin = {
           name: coin.RAW.USD.FROMSYMBOL,
-          price: coin.RAW.USD.PRICE.toFixed(2)
+          price: coin.RAW.USD.PRICE.toFixed(2),
+          volume: parseInt(coin.RAW.USD.VOLUME24HOURTO)
         }
         coinsParsed[coin.name] = coin
       })
@@ -37,6 +39,39 @@ let VueTicker = new Vue({
       this.coins = coinsParsed
       this.subscribeStream(Object.keys(coinsParsed))
     },
+
+
+    sort: function(event) {
+
+      let option = event.target.selectedOptions[0].value
+      let coins = Object.assign([], Object.values(this.coins))
+      let coinsDict = {}
+
+      // sort by name ascending
+      if (option === 'name') {
+        coins.sort((a, b) => {
+          return a.name > b.name
+        })
+      }
+      // sort by volume descending
+      else if (option === 'volume') {
+        coins.sort((a, b) => {
+          return a.volume < b.volume
+        })
+      }
+      else {
+        return;
+      }
+
+      for (let i=0; i < coins.length; i++) {
+        let coin = coins[i]
+        coinsDict[coin.name] = coin
+      }
+
+      this.coins = coinsDict
+    },
+
+
     subscribeStream: function(symbols) {
       /*
         Subscribe to websocket stream using coin symbols.
@@ -63,7 +98,8 @@ let VueTicker = new Vue({
 
         let coin = {
           name: message[2],
-          price: message[5]
+          price: message[5],
+          volume: parseInt(message[13])
         }
 
         if (message[4] === "1") {
