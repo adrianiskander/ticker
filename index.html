@@ -13,13 +13,22 @@
 <body>
 
 
-<nav class="Navbar">
-  <a class="Navbar__item ml-3" href="#"><em><b>ticker</b></em></a>
-  <a class="github-logo mr-3" href="https://github.com/adrianiskander/ticker"></a>
-</nav>
-
-
 <div id="VueTicker">
+
+  <nav class="Navbar">
+    <div class="flex-row">
+      <a class="Navbar__item ml-3" href="/"><strong><em><b>TICKER</b></em></strong></a>
+      <section class="flex-row ml-3">
+        <header>sort by:</header>
+        <select class="ml-1" v-on:change="sort" style="cursor: pointer;">
+          <option value="volume">vol24h</option>
+          <option value="name">a-Z</option>
+        </select>
+      </section>
+    </div>
+    <a class="github-logo mr-3" href="https://github.com/adrianiskander/ticker"></a>
+  </nav>
+
   <div class="container-fluid pl-0 pr-0">
     <div class="row no-gutters">
       <div class="col-4 col-md-3 col-lg-2" v-for="coin in coins">
