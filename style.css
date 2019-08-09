@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700&display=swap&subset=latin-ext');
+
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -6,22 +8,39 @@
 body {
   background: linear-gradient(#004e92, #000428);
   background-attachment: fixed;
+  background-repeat: no-repeat;
   color: white;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.025rem;
+  font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
   margin: 0px;
   padding-top: 50px;
 }
 
 @media (min-width: 768px) {
   body {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }
 
-a {text-decoration: none;}
-a:hover {color: orange;}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover { color: orange; }
+
+select { cursor: pointer; }
+
+.coin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black; 
+  text-align: center;
+  height: 70px;
+}
 
 .Coin {
   display: flex;
@@ -34,12 +53,13 @@ a:hover {color: orange;}
 }
 
 @media (min-width: 768px) {
-  .Coin {
+  .coin {
     height: 100px;
   }
 }
 
 [class*='flex-'] { display: flex; }
+.flex-center { align-items: center; justify-content: center; }
 .flex-col { flex-direction: column; }
 .flex-row { flex-direction: row; }
 
@@ -53,24 +73,26 @@ a:hover {color: orange;}
   height: 25px;
 }
 
-.Navbar {
+#navbar {
   position: fixed;
   top: 0px;
   left: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(0,0,0,0.9);
-  height: 50px;
+  background-color: rgba(0,0,0,0.95);
+  color: white;
   width: 100%;
-  z-index: 1;
+  height: 50px;
+  z-index: 10;
 }
 
-.Navbar__item {color: white;}
+#navbar a {
+  color: white;
+}
 
-.Navbar__item:hover {
+#navbar a:hover {
   color: orange;
-  text-decoration: none;
 }
 
 @-webkit-keyframes RED-FADE {
