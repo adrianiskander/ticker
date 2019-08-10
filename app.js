@@ -1,10 +1,10 @@
-let VueTicker = new Vue({
-  el: '#VueTicker',
+let app = new Vue({
+  el: '#app',
   data: {
     coins: {},
     apiLimit: 100,
-    cryptoApiUrl: 'https://min-api.cryptocompare.com',    // CryptoCompare API
-    cryptoStreamUrl: 'https://streamer.cryptocompare.com' // CryptoCompare websocket stream
+    cryptoApiUrl: 'https://min-api.cryptocompare.com',    /* CryptoCompare API */
+    cryptoStreamUrl: 'https://streamer.cryptocompare.com' /* CryptoCompare websocket stream */
   },
   created() {
     this.requestGetCoinsByVolume()
@@ -47,13 +47,17 @@ let VueTicker = new Vue({
       let coins = Object.assign([], Object.values(this.coins))
       let coinsDict = {}
 
-      // sort by name ascending
+      /*
+        Sort by name ascending
+      */
       if (option === 'name') {
         coins.sort((a, b) => {
           return (a.name < b.name) ? -1 : 1
         })
       }
-      // sort by volume descending
+      /*
+        Sort by volume descending
+      */
       else if (option === 'volume') {
         coins.sort((a, b) => {
           return (a.volume > b.volume) ? -1 : 1
@@ -66,13 +70,9 @@ let VueTicker = new Vue({
       for (let i=0; i < coins.length; i++) {
         let coin = coins[i]
         coinsDict[coin.name] = coin
-        console.log(coinsDict)
       }
 
       this.coins = coinsDict
-
-      // // this.$set(this.data, 'coins', coinsDict)
-      // this.$set(this.someObject, 'b', 2)
     },
 
 
@@ -97,7 +97,9 @@ let VueTicker = new Vue({
 
       message = message.split('~')
       
-      // coin value goes up(1) or down(2)
+      /*
+        Coin value goes up(1) or down(2)
+      */
       if ((message[4] === "1") || (message[4] === "2")) {
 
         let coin = {
