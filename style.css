@@ -59,7 +59,7 @@ select { cursor: pointer; }
 .font-weight-lighter { font-weight: lighter; }
 
 .github-logo {
-  background-image: url('./assets/img/logo-github.png');
+  background-image: url('https://static.unicogent.com/ticker/assets/img/logo-github.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -84,6 +84,7 @@ select { cursor: pointer; }
 
 #navbar a {
   color: white;
+  text-decoration: none;
 }
 
 #navbar a:hover {

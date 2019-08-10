@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>ticker / realtime cryptocurrency transactions / ticker</title>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.min.css" />
-  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>TICKER / Real-time Cryptocurrency Transactions Ticker</title>
+  <meta name="description" content="TICKER displays cryptocurrency transactions data from multiple exchanges in real-time.">
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.4/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 </head>
 <body>
 
 
-<div id="VueTicker">
-
+<div id="app">
   <nav id="navbar">
     <div class="flex-center">
       <a class="ml-3" href="https://adrianiskander.github.io/ticker"><strong>TICKER</strong></a>
       <section class="flex-center ml-3">
-        <header>sort by:</header>
-        <select class="ml-1" v-on:change="sort">
+        <header>SORT BY:</header>
+        <select class="ml-1" v-on:change="sort" aria-label="sort by">
           <option value="volume">VOL24H</option>
           <option value="name">A-Z</option>
         </select>
       </section>
     </div>
-    <a class="github-logo mr-3" href="https://github.com/adrianiskander/ticker"></a>
+    <a class="github-logo mr-3" href="https://github.com/adrianiskander/ticker" title="See code on Github"><span class="d-none">GITHUB</span></a>
   </nav>
-
   <div class="container-fluid p-0">
     <div class="row no-gutters">
       <div class="col-4 col-md-3 col-lg-2" v-for="coin in coins">
         <section class="coin" v-bind:class="{ tickGreen: coin.isUp, tickRed: coin.isDown }">
           <span><b>{{ coin.name }}</b></span>
-          <span>&dollar;{{ coin.price }}</span>
+          <span class="font-weight-lighter">&dollar;{{ coin.price }}</span>
         </section>
       </div>
     </div>
@@ -42,6 +42,6 @@
 </div>
 
 
-<script src="./VueTicker.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
