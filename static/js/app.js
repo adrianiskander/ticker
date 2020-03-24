@@ -1,3 +1,16 @@
+'use strict';
+
+
+const Navbar = Vue.component('navbar', {
+  template: '#navbar-template',
+  methods: {
+    sort: function(event) {
+      this.$root.sort(event)
+    }
+  }
+})
+
+
 let app = new Vue({
   el: '#app',
   data: {

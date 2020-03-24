@@ -12,6 +12,23 @@
 </head>
 <body>
   <div id="app">
+
+    <navbar></navbar>
+
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-4 col-md-3 col-lg-2" v-for="coin in coins">
+          <section class="coin" v-bind:class="{ tickGreen: coin.isUp, tickRed: coin.isDown }">
+            <span><b>{{ coin.name }}</b></span>
+            <span class="font-weight-lighter">&dollar;{{ coin.price }}</span>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <template id="navbar-template">
     <nav id="navbar">
       <div class="flex-center">
         <a class="ml-3" href="https://adrianiskander.github.io/ticker"><strong>TICKER</strong></a>
@@ -25,17 +42,8 @@
       </div>
       <a class="github-logo mr-3" href="https://github.com/adrianiskander/ticker" title="See code on Github"><span class="d-none">GITHUB</span></a>
     </nav>
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-        <div class="col-4 col-md-3 col-lg-2" v-for="coin in coins">
-          <section class="coin" v-bind:class="{ tickGreen: coin.isUp, tickRed: coin.isDown }">
-            <span><b>{{ coin.name }}</b></span>
-            <span class="font-weight-lighter">&dollar;{{ coin.price }}</span>
-          </section>
-        </div>
-      </div>
-    </div>
-  </div>
+  </template>
+
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
