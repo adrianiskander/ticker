@@ -1,28 +1,62 @@
 'use strict';
 
 
+const CoinsList = Vue.component('coins-list', {
+  template: '#coins-list-template',
+  props: ['coins']
+});
+
+
 const Navbar = Vue.component('navbar', {
   template: '#navbar-template',
+  props: ['sortBy'],
   methods: {
-    sort: function(event) {
-      this.$root.sort(event)
+    setSortBy: function(event) {
+      this.$root.sortBy = event.target.selectedOptions[0].value;
     }
   }
 })
 
 
 let app = new Vue({
+
   el: '#app',
+
   data: {
     coins: {},
     apiLimit: 100,
     cryptoApiUrl: 'https://min-api.cryptocompare.com',    /* CryptoCompare API */
-    cryptoStreamUrl: 'https://streamer.cryptocompare.com' /* CryptoCompare websocket stream */
+    cryptoStreamUrl: 'https://streamer.cryptocompare.com' /* CryptoCompare websocket stream */,
+    sortBy: 'name'
   },
+
+  computed: {
+    coinsByName: function() {
+      return Object.values(this.coins).sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+    },
+    coinsByVolume: function() {
+      return Object.values(this.coins).sort((a, b) => {
+        return a.volume < b.volume;
+      });
+    }
+  },
+
   created() {
     this.requestGetCoinsByVolume()
   },
+
   methods: {
+    getCoins: function() {
+      /*
+        Return coins based on selected sort method.
+      */
+      if (this.sortBy === 'name') { return this.coinsByName; }
+      else if (this.sortBy === 'volume') { return this.coinsByVolume; }
+      
+      return this.coins;
+    },
     requestGetCoinsByVolume: function() {
 
       let request = new XMLHttpRequest
@@ -53,42 +87,6 @@ let app = new Vue({
       this.subscribeStream(Object.keys(coinsParsed))
     },
 
-
-    sort: function(event) {
-
-      let option = event.target.selectedOptions[0].value
-      let coins = Object.assign([], Object.values(this.coins))
-      let coinsDict = {}
-
-      /*
-        Sort by name ascending
-      */
-      if (option === 'name') {
-        coins.sort((a, b) => {
-          return (a.name < b.name) ? -1 : 1
-        })
-      }
-      /*
-        Sort by volume descending
-      */
-      else if (option === 'volume') {
-        coins.sort((a, b) => {
-          return (a.volume > b.volume) ? -1 : 1
-        })
-      }
-      else {
-        return;
-      }
-
-      for (let i=0; i < coins.length; i++) {
-        let coin = coins[i]
-        coinsDict[coin.name] = coin
-      }
-
-      this.coins = coinsDict
-    },
-
-
     subscribeStream: function(symbols) {
       /*
         Subscribe to websocket stream using coin symbols.
@@ -113,7 +111,8 @@ let app = new Vue({
       /*
         Coin value goes up(1) or down(2)
       */
-      if ((message[4] === "1") || (message[4] === "2")) {
+
+      if ( ! isNaN(message[13]) && ((message[4] === "1") || (message[4] === "2")) ) {
 
         let coin = {
           name: message[2],
