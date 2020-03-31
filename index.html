@@ -6,26 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="TICKER displays cryptocurrency transactions data from multiple exchanges in real-time.">
 
-  <title>TICKER / Real-time Cryptocurrency Transactions Ticker</title>
+  <title>TICKER | Real-time Cryptocurrency Transactions Ticker</title>
 
   <link rel="stylesheet" type="text/css" href="./static/css/style.css">
 </head>
 <body>
+
+
   <div id="app">
+    <navbar :sort-by="sortBy"></navbar>
+    <coins-list :coins="getCoins()"></coins-list>
+  </div>
 
-    <navbar></navbar>
 
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-        <div class="col-4 col-md-3 col-lg-2" v-for="coin in coins">
-          <section class="coin" v-bind:class="{ tickGreen: coin.isUp, tickRed: coin.isDown }">
-            <span><b>{{ coin.name }}</b></span>
-            <span class="font-weight-lighter">&dollar;{{ coin.price }}</span>
-          </section>
+  <template id="coins-list-template">
+    <div :if="coins">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters">
+          <div class="col-4 col-md-3 col-lg-2" v-for="coin in coins">
+            <section class="coin" v-bind:class="{ tickGreen: coin.isUp, tickRed: coin.isDown }">
+              <span><b>{{ coin.name }}</b></span>
+              <span class="font-weight-lighter">&dollar;{{ coin.price }}</span>
+            </section>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <div :else>
+      <span>Loading...</span>      
+    </div>
+  </template>
 
 
   <template id="navbar-template">
@@ -34,7 +44,7 @@
         <a class="ml-3" href="https://adrianiskander.github.io/ticker"><strong>TICKER</strong></a>
         <section class="flex-center ml-3">
           <header>SORT BY:</header>
-          <select class="ml-1" v-on:change="sort" aria-label="sort by">
+          <select class="ml-1" v-model="sortBy" @change="setSortBy" aria-label="sort by">
             <option value="volume">VOL24H</option>
             <option value="name">A-Z</option>
           </select>
